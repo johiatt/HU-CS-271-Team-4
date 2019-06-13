@@ -1,7 +1,7 @@
 # HU-CS-271-Team-4
 
 jordan hiatt
-jordanhiatt@u.boisestate.edu
+jordanhiatt@u.boisestate.edu  
 https://discord.gg/UDuuFwp
 
 Colten Davis
