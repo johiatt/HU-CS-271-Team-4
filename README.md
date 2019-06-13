@@ -6,3 +6,7 @@ jordanhiatt@u.boisestate.edu
 
 Colten Davis
 coltendavis@u.boisestate.edu
+
+Kirill Malevich
+kirillmalevich@u.boisestate.edu
+...<link to discord>
