@@ -2,7 +2,7 @@
 
 jordan hiatt
 jordanhiatt@u.boisestate.edu
-.. post discord room link later
+https://discord.gg/UDuuFwp
 
 Colten Davis
 coltendavis@u.boisestate.edu
