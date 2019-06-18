@@ -10,3 +10,6 @@ coltendavis@u.boisestate.edu
 Kirill Malevich
 kirillmalevich@u.boisestate.edu
 ...<link to discord>
+
+Sajia Zafreen
+sajiazafreen@u.boisestate.edu
