@@ -25,5 +25,8 @@ public class Calculator {
 	private static int multiple (int a, int b){
 		return a*b;
 	}
+	private static double divide (int a, int b){
+		return (a/b);
+	}
 
 }
