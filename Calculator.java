@@ -72,6 +72,14 @@ public class Calculator {
 	private static double divide (int a, int b){
 		return (a/b);
 	}
+
+    /**
+     * Adds two double numbers
+     *
+     * @param a First parametr to add
+     * @param b Second parametr to add
+     * @return result of a+b
+     */
 	private static double add (double a, double b) {
 		return a+b;
 	}
