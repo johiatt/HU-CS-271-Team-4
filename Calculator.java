@@ -83,5 +83,14 @@ public class Calculator {
 	private static double add (double a, double b) {
 		return a+b;
 	}
+	
+	/**
+	* Squares a number
+	* @param a The number to be squared.
+	* @return results of the square
+	*/
+	private static double squaure ( double a ) {
+		return Math.pow(a,2);	
+	}
 
 }
