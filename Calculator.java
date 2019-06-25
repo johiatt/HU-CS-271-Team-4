@@ -95,5 +95,18 @@ public class Calculator {
 	private static double squaure ( double a ) {
 		return Math.pow(a,2);	
 	}
+	
+	/**
+	* Method to find the factorial of a number
+	* @param a Number to perform the factorial of
+	* @return result of the factorial, a!
+	**/
+	private static int factorial ( int a ) {
+		if(a == 0)
+			return 1;
+		
+		return n*factorial(n-1);
+		
+	}
 
 }
