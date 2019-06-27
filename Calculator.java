@@ -39,7 +39,7 @@ public class Calculator {
 						}
 						case "-": {
                             System.out.printf("Enter Second Argument: %f - ", answer);
-							argument2 = getArgument();
+                            argument2 = getArgument();
 							answer = subtract(answer, argument2);
 							previous = true;
 							break;
