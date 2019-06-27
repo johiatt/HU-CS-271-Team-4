@@ -102,7 +102,7 @@ public class Calculator {
 		if(a == 0)
 			return 1;
 		
-		return n*factorial(n-1);
+		return a*factorial(a-1);
 		
 	}
 
