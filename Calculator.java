@@ -39,6 +39,22 @@ public class Calculator {
 						previous = true;
 						break;
 					}
+					case "-": {
+						if (previous) {
+							argument1 = answer;
+						} else {
+							System.out.print("Enter First Argument: ");
+							input = scanner.next();
+							argument1 = Double.parseDouble(input); // TODO: replace with input check for arguments
+						}
+						System.out.print("Enter Second Argument: ");
+						input = scanner.next();
+						argument2 = Double.parseDouble(input); // TODO: replace with input check for arguments
+						answer = subtract(argument1, argument2);
+						System.out.println("Answer: " + answer); // Print out answer
+						previous = true;
+						break;
+					}
 					case "C":{}
 					case "c":{
 						previous = false;
