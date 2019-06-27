@@ -2,71 +2,71 @@
 
 import java.util.Scanner;
 
-/**
- *
- */
 public class Calculator {
-	private static double answer = 0; // Storing the eventual answer as a double, change as needed.
-	private static boolean previous = false; //True, if we use previous result as a first argument of expressions
-
-	private static Scanner scanner;
 
 	public static void main(String[] args) {
-		boolean exit = false;
 
-		scanner = new Scanner(System.in); // New scanner for user input
+		double answer = 0; // Storing the eventual answer as a double, change as needed.
+		boolean previous = false; //True, if we use previous result as a first argument of expressions
+
+		Scanner scanner = new Scanner(System.in); // New scanner for user input
+
 		if (args.length == 0) {
 			String input;
 			do {
-				try {
-					if (!previous) {
-						System.out.print("Current result: [0.0]\nEnter First Argument: ");
-						input = scanner.next();
-						answer = Double.parseDouble(input); // TODO: replace with input check for arguments
-						previous = true;
-					}
 
-					System.out.printf("Current result: [%f]\nEnter A Mathematical Expression (\"h\" for help): ", answer); // Prompt user for input
-					input = scanner.next();
-					String operation = input;//TODO: Add mathematical expression input check
+				System.out.print("Enter A Mathematical Expression (\"C\" to erase answer. supported \"+\",\"-\",\"*\",\"/\"): "); // Prompt user for input
+				input = scanner.next();
+				String operation = input;//TODO: Add mathematical expression input check
 
-					double argument2;
+				double argument1, argument2;
 
-					switch (operation.toLowerCase()) {
-						case "+": {
-							add();
-							break;
-						}
-						case "-": {
-							System.out.print("Enter Second Argument: ");
+
+				switch (operation) {
+					case "+": {
+						if (previous) {
+							argument1 = answer;
+						} else {
+							System.out.print("Enter First Argument: ");
 							input = scanner.next();
-							argument2 = Double.parseDouble(input); // TODO: replace with input check for arguments
-							answer = subtract(answer, argument2);
-							System.out.println("Answer: " + answer); // Print out answer
-							previous = true;
-							break;
+							argument1 = Double.parseDouble(input); // TODO: replace with input check for arguments
 						}
-						case "c": {
-							previous = false;
-							break;
-						}
-						case "q": {
-							exit = true;
-							break;
-						}
-						case "h": {
-							System.out.println("\t\"c\" to erase answer. \"q\" to exit.  \n\tSupported operations: \"+\",\"-\",\"*\",\"/\"");
-							break;
-						}
-						default: {
-							System.out.println(input + " is unsupported operation");
-						}
+						System.out.print("Enter Second Argument: ");
+						input = scanner.next();
+						argument2 = Double.parseDouble(input); // TODO: replace with input check for arguments
+						answer = add(argument1, argument2);
+						System.out.println("Answer: " + answer); // Print out answer
+						previous = true;
+						break;
 					}
-				} catch (NumberFormatException e) {
-					System.out.println("Input is not a number");
+					case "-": {
+						if (previous) {
+							argument1 = answer;
+						} else {
+							System.out.print("Enter First Argument: ");
+							input = scanner.next();
+							argument1 = Double.parseDouble(input); // TODO: replace with input check for arguments
+						}
+						System.out.print("Enter Second Argument: ");
+						input = scanner.next();
+						argument2 = Double.parseDouble(input); // TODO: replace with input check for arguments
+						answer = subtract(argument1, argument2);
+						System.out.println("Answer: " + answer); // Print out answer
+						previous = true;
+						break;
+					}
+					case "C":{}
+					case "c":{
+						previous = false;
+						break;
+					}
+					default: {
+						System.out.println(input + " is unsupported operation");
+					}
 				}
-			} while (!exit);
-			System.out.println("Bye!");
+
+			} while (!input.equals(""));
+
 			scanner.close(); // Closing scanner. Move around as necessary.
 
 		} else {
@@ -79,28 +79,28 @@ public class Calculator {
 				//TODO: Create function that prints "how to use"
 			}
 		}
+		
+
 	}
-
-	private static double getArgument() throws NumberFormatException{
-		return Double.parseDouble(scanner.next());
-	}
-
-
 	private static int multiple (int a, int b){
 		return a*b;
 	}
 	private static double divide (int a, int b){
 		return (a/b);
 	}
+	private static double subtract (double a, double b) {
+		return (a-b);
+	}
 
-
-	/**
-	 * Changes global variable answer to answer + second argument from input
-	 */
-	private static void add () {
-		System.out.printf("Enter Second Argument: %f + ", answer);
-		previous = true;
-		answer = answer + getArgument();
+    /**
+     * Adds two double numbers
+     *
+     * @param a First parametr to add
+     * @param b Second parametr to add
+     * @return result of a+b
+     */
+	private static double add (double a, double b) {
+		return a+b;
 	}
 	
 	/**
