@@ -38,11 +38,9 @@ public class Calculator {
 							break;
 						}
 						case "-": {
-							System.out.print("Enter Second Argument: ");
-							input = scanner.next();
-							argument2 = Double.parseDouble(input); // TODO: replace with input check for arguments
+                            System.out.printf("Enter Second Argument: %f - ", answer);
+							argument2 = getArgument();
 							answer = subtract(answer, argument2);
-							System.out.println("Answer: " + answer); // Print out answer
 							previous = true;
 							break;
 						}
@@ -92,6 +90,9 @@ public class Calculator {
 	private static double divide (int a, int b){
 		return (a/b);
 	}
+    private static double subtract (double a, double b) {
+        return (a-b);
+    }
 
 
 	/**
@@ -102,16 +103,16 @@ public class Calculator {
 		previous = true;
 		answer = answer + getArgument();
 	}
-	
+
 	/**
 	* Squares a number
 	* @param a The number to be squared.
 	* @return results of the square
 	*/
 	private static double squaure ( double a ) {
-		return Math.pow(a,2);	
+		return Math.pow(a,2);
 	}
-	
+
 	/**
 	* Method to find the factorial of a number
 	* @param a Number to perform the factorial of
@@ -120,9 +121,9 @@ public class Calculator {
 	private static int factorial ( int a ) {
 		if(a == 0)
 			return 1;
-		
+
 		return a*factorial(a-1);
-		
+
 	}
 
 }
