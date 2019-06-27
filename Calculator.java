@@ -56,6 +56,9 @@ public class Calculator {
 							System.out.println("\t\"c\" to erase answer. \"q\" to exit.  \n\tSupported operations: \"+\",\"-\",\"*\",\"/\"");
 							break;
 						}
+                        case "f": {
+                            //TODO: add factorial
+                        }
 						default: {
 							System.out.println(input + " is unsupported operation");
 						}
