@@ -1,6 +1,7 @@
 // Java Calculator
 
 import java.util.Scanner;
+import java.lang.*;
 
 /**
  *
@@ -124,6 +125,18 @@ public class Calculator {
 
 		return a*factorial(a-1);
 
+	}
+	
+	/**
+	* Method to raise a given number to a certain power.
+	* @param a the number to you want to raise to a power
+	* @param b the power you want to raise 'a' to
+	* @return result of a^b
+	**/
+	private static double power ( double a, double b ){
+	
+	  return Math.pow(a, b);
+	
 	}
 
 }
