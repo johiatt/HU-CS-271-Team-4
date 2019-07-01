@@ -162,5 +162,15 @@ public class Calculator {
 	  return Math.pow(a, b);
 	
 	}
+  /**
+  * Method to subtract two numbers
+  * @param a Starting number
+  * @param b How much first number will be reduced
+  * @return result of the subtraction
+  *
+  **/
+  private static double subtract (double a, double b){
+    return (a-b);
+  }
 
 }
