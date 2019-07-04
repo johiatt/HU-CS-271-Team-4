@@ -1,6 +1,7 @@
 // Java Calculator
 
 import java.util.Scanner;
+import java.lang.*;
 
 /**
  *
@@ -44,6 +45,15 @@ public class Calculator {
 							previous = true;
 							break;
 						}
+	                       case "*": {
+						multiply();
+						break;
+					}
+					case "/": {
+						divide();
+						break;
+					}
+
 						case "c": {
 							previous = false;
 							break;
@@ -84,15 +94,30 @@ public class Calculator {
 	}
 
 
-	private static int multiple (int a, int b){
-		return a*b;
+	/**
+	 * Updates the global variable answer to answer * second argument from user
+	 * input
+	 */
+	private static void multiply() {
+		System.out.printf("Enter Second Argument: %f * ", answer);
+		previous = true;
+		answer = answer * getArgument();
 	}
-	private static double divide (int a, int b){
-		return (a/b);
+
+	/**
+	 * Updates the global variable answer to answer / second argument from user
+	 * input
+	 */
+	private static void divide() {
+		System.out.printf("Enter Second Argument: %f / ", answer);
+		previous = true;
+		double localVariable = getArgument();
+		if (localVariable == 0) {
+			System.out.println("Math Error");
+		} else {
+			answer = answer / localVariable;
+		}
 	}
-    private static double subtract (double a, double b) {
-        return (a-b);
-    }
 
 
 	/**
@@ -125,5 +150,27 @@ public class Calculator {
 		return a*factorial(a-1);
 
 	}
+	
+	/**
+	* Method to raise a given number to a certain power.
+	* @param a the number to you want to raise to a power
+	* @param b the power you want to raise 'a' to
+	* @return result of a^b
+	**/
+	private static double power ( double a, double b ){
+	
+	  return Math.pow(a, b);
+	
+	}
+  /**
+  * Method to subtract two numbers
+  * @param a Starting number
+  * @param b How much first number will be reduced
+  * @return result of the subtraction
+  *
+  **/
+  private static double subtract (double a, double b){
+    return (a-b);
+  }
 
 }
