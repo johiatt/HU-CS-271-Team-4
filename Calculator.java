@@ -45,15 +45,18 @@ public class Calculator {
 							previous = true;
 							break;
 						}
-	                       case "*": {
-						multiply();
-						break;
-					}
-					case "/": {
-						divide();
-						break;
-					}
-
+						case "*": {
+							multiply();
+							break;
+						}
+						case "/": {
+							divide();
+							break;
+						}
+						case "p": {
+							power();
+							break;
+						}
 						case "c": {
 							previous = false;
 							break;
@@ -63,7 +66,10 @@ public class Calculator {
 							break;
 						}
 						case "h": {
-							System.out.println("\t\"c\" to erase answer. \"q\" to exit.  \n\tSupported operations: \"+\",\"-\",\"*\",\"/\"");
+							System.out.println("\t\"c\" to erase answer. \"q\" to exit.\n" +
+									"\tSupported operations:\n " +
+															"\t\t\t\t\t\"+\",\"-\",\"*\",\"/\"\n" +
+															"\t\t\t\t\t\"p\" - power");
 							break;
 						}
 						default: {
@@ -152,15 +158,12 @@ public class Calculator {
 	}
 	
 	/**
-	* Method to raise a given number to a certain power.
-	* @param a the number to you want to raise to a power
-	* @param b the power you want to raise 'a' to
-	* @return result of a^b
+	* Method to answer to a certain power.
 	**/
-	private static double power ( double a, double b ){
-	
-	  return Math.pow(a, b);
-	
+	private static void power (){
+		System.out.printf("Enter Power Argument: %f ^ ", answer);
+		previous = true;
+		answer = Math.pow(answer,getArgument());
 	}
   /**
   * Method to subtract two numbers
